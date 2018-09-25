@@ -1,0 +1,8 @@
+/.settings
+.profile
+/target/
+.classpath
+.project
+faces-config.pageflow
+*.log
+*/.gitignore

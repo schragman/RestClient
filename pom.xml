@@ -26,12 +26,18 @@
 	    <artifactId>cxf-rt-ws-policy</artifactId>
 	    <version>3.2.6</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.jaxrs</groupId>
+		<artifactId>jackson-jaxrs-json-provider</artifactId>
+		<version>2.5.3</version>
+	</dependency>
 
-<!-- 	<dependency> -->
-<!-- 		<groupId>org.apache.cxf</groupId> -->
-<!-- 		<artifactId>cxf-rt-transports-http-hc</artifactId> -->
-<!-- 		<version>3.2.6</version> -->
-<!-- 	</dependency> -->
+ 	<!-- <dependency> 
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http-hc</artifactId>
+		<version>3.2.6</version>
+	</dependency>  -->
 
 
 

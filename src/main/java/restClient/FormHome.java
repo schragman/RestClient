@@ -42,7 +42,7 @@ public class FormHome implements Serializable {
 
 	public void doCallBook(ActionEvent pvEvent) {
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://localhost:8080").path("/ReferenceII/rest/books/2");
+		WebTarget target = client.target("http://localhost:8080").path("/ReferenceII/rest/books").queryParam(name, values)
 		book = target.request().get(Book.class);
 		bookTitle = book.getTitle();
 	}

@@ -1,7 +1,8 @@
 package restClient;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
-//@XmlRootElement
+@XmlRootElement
 public class Book {
 
 	private Long id;

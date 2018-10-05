@@ -5,16 +5,9 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.event.ActionEvent;
 import javax.inject.Named;
-import javax.security.jacc.WebResourcePermission;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.xml.bind.JAXBElement;
-
-import org.glassfish.jersey.client.ClientResponse;
 
 
 //import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
@@ -22,6 +15,9 @@ import org.glassfish.jersey.client.ClientResponse;
 @SessionScoped
 @Named
 public class FormHome implements Serializable {
+
+
+
 	/**
 	 *
 	 */
@@ -42,7 +38,16 @@ public class FormHome implements Serializable {
 
 	public void doCallBook(ActionEvent pvEvent) {
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://localhost:8080").path("/ReferenceII/rest/books").queryParam(name, values)
+		WebTarget target = client.target("http://localhost:8080")
+				.path("/ReferenceII/rest/books/id").queryParam("bookId", bookId);
+		book = target.request().get(Book.class);
+		bookTitle = book.getTitle();
+	}
+
+	public void doCallJBook(ActionEvent pvEvent) {
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://localhost:8080")
+				.path("/ReferenceII/rest/books/jid").queryParam("bookId", bookId);
 		book = target.request().get(Book.class);
 		bookTitle = book.getTitle();
 	}
